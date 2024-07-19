@@ -28,11 +28,6 @@ namespace MujWeb.Controllers
             return View();
         }
 
-        public IActionResult CreateUzivatel()
-        {
-            return View();
-        }
-
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
         {

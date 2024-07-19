@@ -8,12 +8,10 @@ namespace MujWeb.Models
     {
         [Key]
         public int Id { get; set; }
-        [Required]
-        [MaxLength(20)]
+        [MaxLength(15)]
         [DisplayName("Jméno")]
-        public int Name { get; set; }
-        [Required]
+        public string Name { get; set; }
         [DisplayName("Datum Registrace")]
-        public string DateOfRegistration { get; set; }
+        public DateTime DateOfRegistration { get; set; }
     }
 }

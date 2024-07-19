@@ -1,5 +1,5 @@
 ﻿@{
-    ViewData["Title"] = "Show from database";
+    ViewData["Title"] = "Zobrazení z databáze";
 }
 @model Uzivatel
 
@@ -12,20 +12,14 @@
 <div class="container border-2 rounded bg-light d-flex">
     <form method="post" class=" row">
         <div class="border p-3 mt-4">
-            <div class="row pb-2">
-                <h2 class="text-primary">
-                    Create category
-                </h2>
-                <hr />
-            </div>
             <div class="mb-3 row p-1">
-                <label asp-for="Name" class="p-0"></label>
+                <label asp-for="Name" class="p-0 text-dark"></label>
                 <input asp-for="Name" class="form-control" />
                 <span asp-validation-for="Name" class="text-danger"></span>
 
             </div>
             <div class="mb-3 row p-1">
-                <label asp-for="DateOfRegistration" class="p-0"></label>
+                <label asp-for="DateOfRegistration" class="p-0 text-dark"></label>
                 <input asp-for="DateOfRegistration" class="form-control" />
                 <span asp-validation-for="DateOfRegistration" class="text-danger"></span>
             </div>
