@@ -1,7 +1,14 @@
+using Microsoft.EntityFrameworkCore;
+using MujWeb.Models;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+builder.Services.AddDbContext<UzivatelContext>(options =>
+{
+    options.UseSqlServer("Server=DESKTOP-VITVL;Database=MujWebDB;Trusted_Connection=True;TrustServerCertificate=True;");
+});
 
 var app = builder.Build();
 

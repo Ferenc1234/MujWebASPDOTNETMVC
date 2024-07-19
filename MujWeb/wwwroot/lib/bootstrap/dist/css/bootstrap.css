@@ -9602,6 +9602,11 @@ textarea.form-control-lg {
     --bs-link-underline-opacity: 1;
 }
 
+.bg-green {
+    --bs-bg-opacity: 1;
+    background-color: rgb(19, 122, 21);
+}
+
 .bg-primary {
     --bs-bg-opacity: 1;
     background-color: rgba(var(--bs-primary-rgb), var(--bs-bg-opacity)) !important;
