@@ -1,0 +1,29 @@
+[33mcommit d1fb5f920214050477492645371bc75384d954ce[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmaster[m[33m)[m
+Author: Ferenc1234 <frubacek@boacraft.eu>
+Date:   Sun Jul 21 14:30:00 2024 +0200
+
+    Update
+
+[33mcommit a86b2aaf349b9f689ef1fde3a9e47919df563939[m[33m ([m[1;31morigin/master[m[33m)[m
+Author: Ferenc1234 <frubacek@boacraft.eu>
+Date:   Fri Jul 19 14:21:13 2024 +0200
+
+    Regrouped files
+
+[33mcommit 20d0f1ba01e8e7957ca534a787037e78bd213596[m
+Author: Ferenc1234 <frubacek@boacraft.eu>
+Date:   Fri Jul 19 12:48:10 2024 +0200
+
+    Database added
+
+[33mcommit a792131fecbc59aeeb38cf7e9b2b2ac749a3e855[m
+Author: Ferenc1234 <frubacek@boacraft.eu>
+Date:   Thu Jul 18 14:09:29 2024 +0200
+
+    Přidejte soubory projektu.
+
+[33mcommit 94ddc6b02176b0e2c8451e01566fba6246ad6442[m
+Author: Ferenc1234 <frubacek@boacraft.eu>
+Date:   Thu Jul 18 14:09:27 2024 +0200
+
+    Přidat .gitattributes a .gitignore

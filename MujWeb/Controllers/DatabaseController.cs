@@ -11,6 +11,7 @@ namespace MujWeb.Controllers
             _db = db;
         }
 
+
         public IActionResult CreateUzivatel()
         {
             return View();
