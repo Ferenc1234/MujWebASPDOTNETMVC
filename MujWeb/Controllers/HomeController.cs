@@ -6,11 +6,10 @@ namespace MujWeb.Controllers
 {
     public class HomeController : Controller
     {
-        private readonly ILogger<HomeController> _logger;
-
-        public HomeController(ILogger<HomeController> logger)
+        private readonly UzivatelContext _db;
+        public HomeController(UzivatelContext db)
         {
-            _logger = logger;
+            _db = db;
         }
 
         public IActionResult Index()
@@ -25,7 +24,8 @@ namespace MujWeb.Controllers
 
         public IActionResult Databaze()
         {
-            return View();
+            List<Uzivatel> objCategoryList = _db.Uzivatele.ToList();
+            return View(objCategoryList);
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]

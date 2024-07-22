@@ -3,9 +3,10 @@
 }
 @model Uzivatel
 
+
 <div class="text-center container">
     <h1>
-        Vytvořit záznam
+        Smazat záznam
     </h1>
 </div>
 <div class="container border-2 rounded bg-light d-flex">
@@ -13,19 +14,19 @@
         <div class="border p-3 mt-4">
             <div class="mb-3 row p-1">
                 <label asp-for="Name" class="p-0 text-dark"></label>
-                <input asp-for="Name" class="form-control" />
+                <input asp-for="Name" disabled class="form-control" />
                 <span asp-validation-for="Name" class="text-danger"></span>
+
             </div>
             <div class="mb-3 row p-1">
                 <label asp-for="DateOfRegistration" class="p-0 text-dark"></label>
-                <!-- Set the input type to datetime-local for handling date and time -->
-                <input asp-for="DateOfRegistration" class="form-control" type="datetime-local" id="DateOfRegistration" />
+                <input asp-for="DateOfRegistration" disabled class="form-control" />
                 <span asp-validation-for="DateOfRegistration" class="text-danger"></span>
             </div>
 
             <div class="row">
                 <div class="col-6 col-md-3">
-                    <button type="submit" class="btn btn-primary form-control">Uložit</button>
+                    <button type="submit" class="btn btn-primary form-control">Smazat</button>
                 </div>
                 <div class="col-6 col-md-3">
                     <a asp-controller="Home" asp-action="Databaze" class="btn btn-outline-secondary border form-control">
@@ -35,19 +36,5 @@
             </div>
         </div>
     </form>
+
 </div>
-
-<script>
-    // JavaScript to set the current date and time
-    document.addEventListener('DOMContentLoaded', function () {
-        var now = new Date();
-        var year = now.getFullYear();
-        var month = ('0' + (now.getMonth() + 1)).slice(-2);
-        var day = ('0' + now.getDate()).slice(-2);
-        var hours = ('0' + now.getHours()).slice(-2);
-        var minutes = ('0' + now.getMinutes()).slice(-2);
-        var formattedDateTime = `${year}-${month}-${day}T${hours}:${minutes}`;
-
-        document.getElementById('DateOfRegistration').value = formattedDateTime;
-    });
-</script>

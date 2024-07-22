@@ -3,6 +3,7 @@
 }
 @model Uzivatel
 
+
 <div class="text-center container">
     <h1>
         Vytvořit záznam
@@ -15,11 +16,11 @@
                 <label asp-for="Name" class="p-0 text-dark"></label>
                 <input asp-for="Name" class="form-control" />
                 <span asp-validation-for="Name" class="text-danger"></span>
+
             </div>
             <div class="mb-3 row p-1">
                 <label asp-for="DateOfRegistration" class="p-0 text-dark"></label>
-                <!-- Set the input type to datetime-local for handling date and time -->
-                <input asp-for="DateOfRegistration" class="form-control" type="datetime-local" id="DateOfRegistration" />
+                <input asp-for="DateOfRegistration" class="form-control" />
                 <span asp-validation-for="DateOfRegistration" class="text-danger"></span>
             </div>
 
@@ -35,19 +36,5 @@
             </div>
         </div>
     </form>
+
 </div>
-
-<script>
-    // JavaScript to set the current date and time
-    document.addEventListener('DOMContentLoaded', function () {
-        var now = new Date();
-        var year = now.getFullYear();
-        var month = ('0' + (now.getMonth() + 1)).slice(-2);
-        var day = ('0' + now.getDate()).slice(-2);
-        var hours = ('0' + now.getHours()).slice(-2);
-        var minutes = ('0' + now.getMinutes()).slice(-2);
-        var formattedDateTime = `${year}-${month}-${day}T${hours}:${minutes}`;
-
-        document.getElementById('DateOfRegistration').value = formattedDateTime;
-    });
-</script>

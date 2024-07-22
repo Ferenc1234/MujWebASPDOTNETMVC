@@ -26,40 +26,19 @@
                 </tr>
             </thead>
             <tbody>
-                @if (Model != null)
-                {
-                    @foreach (var item in Model)
-                    {
-                        <tr class="text-center">
-                            <td>@item.Id</td>
-                            <td>@item.Name</td>
-                            <td>@item.DateOfRegistration</td>
-                            <td>
-                                <div class="btn-group" role="group">
-                                    <a asp-controller="Category" asp-action="Edit" asp-route-id="@item.Id" class="btn btn-primary mx-2">
-                                        <i class="bi bi-pencil-square"></i> Edit
-                                    </a>
-                                    <a asp-controller="Category" asp-action="Delete" asp-route-id="@item.Id" class="btn btn-danger mx-2">
-                                        <i class="bi bi-trash-fill"></i> Delete
-                                    </a>
-                                </div>
-                            </td>
-                        </tr>
-                    }
-                }
-                else
+                @foreach (var item in Model)
                 {
                     <tr class="text-center">
-                        <td>-</td>
-                        <td>-</td>
-                        <td>-</td>
+                        <td>@item.Id</td>
+                        <td>@item.Name</td>
+                        <td>@item.DateOfRegistration</td>
                         <td>
-                            <div class="btn-group mx-auto" role="group">
-                                <a class="btn btn-sm btn-secondary mx-auto disabled text-dark">
-                                    <i class="bi bi-pencil-square"></i><br /> Upravit
+                            <div class="btn-group" role="group">
+                                <a asp-controller="Database" asp-action="EditUzivatel" asp-route-id="@item.Id" class="btn btn-primary mx-auto btn-sm">
+                                    <i class="bi bi-pencil-square"></i> Edit
                                 </a>
-                                <a class="btn btn-sm btn-secondary mx-auto disabled text-dark">
-                                    <i class="bi bi-trash-fill"></i><br /> Smazat
+                                <a asp-controller="Database" asp-action="DeleteUzivatel" asp-route-id="@item.Id" class="btn btn-danger mx-auto btn-sm">
+                                    <i class="bi bi-trash-fill"></i> Delete
                                 </a>
                             </div>
                         </td>

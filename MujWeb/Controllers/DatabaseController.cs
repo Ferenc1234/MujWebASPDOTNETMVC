@@ -16,6 +16,34 @@ namespace MujWeb.Controllers
         {
             return View();
         }
+        public IActionResult EditUzivatel(int id)
+        {
+            if (id == null || id == 0)
+            {
+                return NotFound();
+            }
+            Uzivatel? categoryFromDb = _db.Uzivatele.Find(id);
+
+            if (categoryFromDb == null)
+            {
+                return NotFound();
+            }
+            return View(categoryFromDb);
+        }
+        public IActionResult DeleteUzivatel(int? id)
+        {
+            if (id == null || id == 0)
+            {
+                return NotFound();
+            }
+            Uzivatel? categoryFromDb = _db.Uzivatele.Find(id);
+
+            if (categoryFromDb == null)
+            {
+                return NotFound();
+            }
+            return View(categoryFromDb);
+        }
 
         [HttpPost]
         public IActionResult CreateUzivatel(Uzivatel obj)
@@ -25,12 +53,40 @@ namespace MujWeb.Controllers
                 _db.Uzivatele.Add(obj);
                 _db.SaveChanges();
                 TempData["success"] = "Category created succesfully";
-                return RedirectToAction("Index", "Category");
+                return RedirectToAction("Databaze", "Home");
             }
             else
             {
                 return View();
             }
         }
+        [HttpPost]
+        public IActionResult EditUzivatel(Uzivatel obj)
+        {
+            if (ModelState.IsValid)
+            {
+                _db.Uzivatele.Update(obj);
+                _db.SaveChanges();
+                TempData["success"] = "Category edited succesfully";
+                return RedirectToAction("Databaze", "Home");
+            }
+            return View();
+        }
+        [HttpPost, ActionName("DeleteUzivatel")]
+
+        public IActionResult DeleteUzivatelPOST(int? id)
+        {
+            Uzivatel? obj = _db.Uzivatele.Find(id);
+            if (obj == null)
+            {
+                return NotFound();
+            }
+            _db.Uzivatele.Remove(obj);
+            _db.SaveChanges();
+            TempData["success"] = "Category deleted succesfully";
+            return RedirectToAction("Databaze", "Home");
+
+        }
+
     }
 }
