@@ -16,7 +16,7 @@ namespace MujWeb.Controllers
         {
             return View();
         }
-        public IActionResult EditUzivatel(int id)
+        public IActionResult EditUzivatel(int? id)
         {
             if (id == null || id == 0)
             {
