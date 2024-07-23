@@ -11,7 +11,7 @@ using MujWeb.Models;
 
 namespace MujWeb.Migrations
 {
-    [DbContext(typeof(UzivatelContext))]
+    [DbContext(typeof(ApplicationDbContext))]
     [Migration("20240719065613_Create")]
     partial class Create
     {

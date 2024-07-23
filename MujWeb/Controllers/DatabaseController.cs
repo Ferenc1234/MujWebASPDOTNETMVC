@@ -5,8 +5,8 @@ namespace MujWeb.Controllers
 {
     public class DatabaseController : Controller
     {
-        private readonly UzivatelContext _db;
-        public DatabaseController(UzivatelContext db)
+        private readonly ApplicationDbContext _db;
+        public DatabaseController(ApplicationDbContext db)
         {
             _db = db;
         }

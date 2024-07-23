@@ -2,11 +2,11 @@
 
 namespace MujWeb.Models
 {
-    public class UzivatelContext : DbContext //Používá balíček na databáze
+    public class ApplicationDbContext : DbContext //Používá balíček na databáze
     {
         public DbSet<Uzivatel> Uzivatele { get; set; }  //Vytvoří tabulku Uzivatele
 
-        public UzivatelContext(DbContextOptions options) : base(options) //Vrací nastavení databáze
+        public ApplicationDbContext(DbContextOptions options) : base(options) //Vrací nastavení databáze
         {
             
         }

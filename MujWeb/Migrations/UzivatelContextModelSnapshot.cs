@@ -10,7 +10,7 @@ using MujWeb.Models;
 
 namespace MujWeb.Migrations
 {
-    [DbContext(typeof(UzivatelContext))]
+    [DbContext(typeof(ApplicationDbContext))]
     partial class UzivatelContextModelSnapshot : ModelSnapshot
     {
         protected override void BuildModel(ModelBuilder modelBuilder)

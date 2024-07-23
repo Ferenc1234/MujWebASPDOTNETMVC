@@ -5,7 +5,7 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
-builder.Services.AddDbContext<UzivatelContext>(options =>
+builder.Services.AddDbContext<ApplicationDbContext>(options =>
 {
     options.UseSqlServer("Server=DESKTOP-VITVL;Database=MujWebDB;Trusted_Connection=True;TrustServerCertificate=True;");
 });
