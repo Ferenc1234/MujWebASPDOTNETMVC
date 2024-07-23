@@ -1,7 +1,11 @@
 ﻿@{
     ViewData["Title"] = "Kalkulačka";
 }
+@{
+    var calculations = ViewBag.Calculations as List<Calculator>;
+}
 @model Calculator
+
 
 <div class="text-center container">
     <h1 class="display-4">Kalkulačka</h1>
@@ -20,20 +24,20 @@
             <div class="mb-2 text-start">
                 <!--// 1 = +, 2 = -, 3 = *, 4 = /-->
                 <div>
-                    <input asp-for="Operation" type="radio" value="1" id="1" />
+                    <input asp-for="Operation" type="radio" value="1" id="1" checked/>
                     <label for="1">+</label>
                 </div>
                 <div>
                     <input asp-for="Operation" type="radio" value="2" id="2" />
-                    <label for="1">-</label>
+                    <label for="2">-</label>
                 </div>
                 <div>
                     <input asp-for="Operation" type="radio" value="3" id="3" />
-                    <label for="1">×</label>
+                    <label for="3">×</label>
                 </div>
                 <div>
                     <input asp-for="Operation" type="radio" value="4" id="4" />
-                    <label for="1">÷</label>
+                    <label for="4">÷</label>
                 </div>
                 <span asp-validation-for="Operation" class="text-danger"></span>
 
@@ -54,4 +58,35 @@
             </div>
         </div>
     </form>
+    <div class="table-responsive">
+        <table class="p-3 mb-2 table table-bordered align-content-left">
+            @foreach (var item in calculations)
+            {
+                <tr>
+                    <td>@item.FirstNumber</td>
+                    <td>
+                        @if (item.Operation == 1)
+                        {
+                            <span>+</span>
+                        }
+                        else if (item.Operation == 2)
+                        {
+                            <span>-</span>
+                        }
+                        else if (item.Operation == 3)
+                        {
+                            <span>×</span>
+                        }
+                        else if (item.Operation == 4)
+                        {
+                            <span>÷</span>
+                        }
+                    </td>
+                    <td>@item.SecondNumber</td>
+                    <td>@item.Result</td>
+                </tr>
+            }
+        </table>
+       
+    </div>
 </div>

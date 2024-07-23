@@ -6,6 +6,10 @@ namespace MujWeb.Models
 {
     public class Calculator
     {
+        [Key]
+        [Required]
+        public int Id { get; set; }
+
         [DisplayName("První číslo")]
         [StringToDouble(ErrorMessage = "Zadejte prosím validní číslo")]
         [Required(ErrorMessage = "Zadejte prosím hodnotu")]
