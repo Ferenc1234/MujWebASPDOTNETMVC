@@ -1,4 +1,5 @@
-﻿using System.ComponentModel;
+﻿using MujWeb.Data;
+using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 
 namespace MujWeb.Models
@@ -6,13 +7,16 @@ namespace MujWeb.Models
     public class Calculator
     {
         [DisplayName("První číslo")]
-        [Required]
+        [StringToDouble(ErrorMessage = "Zadejte prosím validní číslo")]
+        [Required(ErrorMessage = "Zadejte prosím hodnotu")]
         public required string FirstNumber { get; set; }
-        [Required]
         [DisplayName("Druhé číslo")]
+        [StringToDouble(ErrorMessage = "Zadejte prosím validní číslo")]
+        [Required(ErrorMessage = "Zadejte prosím hodnotu")]
         public required string SecondNumber { get; set; }
         [DisplayName("Výsledek")]
         public double Result { get; set; }
-        public int Operation { get; set; } // 1 = +, 2 = -, 3 = *, 4 = /
+        [Required(ErrorMessage = "Vyberte prosím operaci")]
+        public required int Operation { get; set; } // 1 = +, 2 = -, 3 = *, 4 = /
     }
 }

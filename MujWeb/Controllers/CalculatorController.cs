@@ -34,17 +34,20 @@ namespace MujWeb.Controllers
                         obj.Result = Convert.ToDouble(obj.FirstNumber.Replace('.', ',')) / Convert.ToDouble(obj.SecondNumber.Replace('.', ','));
                         break;
                     default:
-                        obj.Result = 0;
+                        ViewBag.Result = "Error";
                         break;
+
                 }
 
             }
-            catch 
+            catch
             {
-                ViewData["Error"] = "An error occured";    
+                ViewBag.Result = "Error";
             }
-
-            ViewBag.Result = obj.Result;
+            if (ViewBag.Result == null) 
+            { 
+                ViewBag.Result = obj.Result;
+            }
             return View();
         }
 
