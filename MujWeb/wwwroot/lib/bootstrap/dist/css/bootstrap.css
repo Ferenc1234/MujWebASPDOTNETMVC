@@ -3438,7 +3438,7 @@ textarea.form-control-lg {
 
 .btn-primary {
     --bs-btn-color: #fff;
-    --bs-btn-bg: #e83283;
+    --bs-btn-bg: #e83283 !important;
     --bs-btn-border-color: #e83283;
     --bs-btn-hover-color: #fff;
     --bs-btn-hover-bg: #c52b6f;
@@ -3472,7 +3472,7 @@ textarea.form-control-lg {
 
 .btn-success {
     --bs-btn-color: #fff;
-    --bs-btn-bg: #41d7a7;
+    --bs-btn-bg: #41d7a7 !important;
     --bs-btn-border-color: #41d7a7;
     --bs-btn-hover-color: #fff;
     --bs-btn-hover-bg: #37b78e;
@@ -3523,7 +3523,7 @@ textarea.form-control-lg {
 
 .btn-danger {
     --bs-btn-color: #fff;
-    --bs-btn-bg: #fd7e14;
+    --bs-btn-bg: #fd7e14 !important;
     --bs-btn-border-color: #fd7e14;
     --bs-btn-hover-color: #fff;
     --bs-btn-hover-bg: #d76b11;

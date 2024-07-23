@@ -1,0 +1,54 @@
+﻿@{
+    ViewData["Title"] = "Kalkulačka";
+}
+@model Calculator
+
+<div class="text-center container">
+    <h1 class="display-4">Kalkulačka</h1>
+
+    <p class="lead pb-4 pt-2">Jednoduchá kalkulačka.</p>
+</div>
+
+<div class="">
+    <form class="row" method="post">
+        <div class="m-2 mx-auto">
+            <div class="mb-2">
+                <label asp-for="FirstNumber" class="p-0 text-dark"></label>
+                <input asp-for="FirstNumber" class="form-control" />
+            </div>
+            <div class="row">
+                <!--// 1 = +, 2 = -, 3 = *, 4 = /-->
+                <div>
+                    <input asp-for="Operation" type="radio" value="1" id="1" />
+                    <label for="1">+</label>
+                </div>
+                <div>
+                    <input asp-for="Operation" type="radio" value="2" id="2" />
+                    <label for="1">-</label>
+                </div>
+                <div>
+                    <input asp-for="Operation" type="radio" value="3" id="3" />
+                    <label for="1">×</label>
+                </div>
+                <div>
+                    <input asp-for="Operation" type="radio" value="4" id="4" />
+                    <label for="1">÷</label>
+                </div>
+
+
+            </div>
+            <div class="mb-2">
+                <label asp-for="SecondNumber" class="p-0 text-dark"></label>
+                <input asp-for="SecondNumber" class="form-control" />
+            </div>
+            
+            <div>
+                <button type="submit" class="btn btn-sm btn-primary">Vypočítat</button>
+            </div>
+            <div>
+                <label asp-for="Result" class="p-0 text-dark"></label>
+                <input asp-for="Result" class="form-control" readonly value="@ViewBag.Result" />
+            </div>
+        </div>
+    </form>
+</div>
