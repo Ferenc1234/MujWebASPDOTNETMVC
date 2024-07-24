@@ -22,7 +22,7 @@ namespace MujWeb.Controllers
 
     public IActionResult Index()
         {
-            List<Calculator> objCategoryList = _db.Calculations.ToList();
+            List<Calculator> objCategoryList = _db.Calculations.OrderByDescending(c => c.Id).ToList();
             ViewBag.Calculations = objCategoryList;
             return View();
         }
@@ -46,6 +46,10 @@ namespace MujWeb.Controllers
                         break;
                     case 4:
                         obj.Result = Convert.ToDouble(obj.FirstNumber.Replace('.', ',')) / Convert.ToDouble(obj.SecondNumber.Replace('.', ','));
+                        if (obj.SecondNumber == "0")
+                        {
+                            ViewBag.Result = "Error";
+                        }
                         break;
                     default:
                         ViewBag.Result = "Error";
@@ -63,15 +67,13 @@ namespace MujWeb.Controllers
                 _db.Calculations.Add(obj);
                 _db.SaveChanges();
             }
-            var calculations = ViewBag.Calculations as List<Calculator>;
-            if (calculations != null && calculations.Count > 10)
+            List<Calculator> objCategoryList = _db.Calculations.OrderByDescending(c => c.Id).ToList();
+            ViewBag.Calculations = objCategoryList;
+            if (objCategoryList.Count > 9)
             {
-                _db.Calculations.Remove(calculations[10]);
+                _db.Calculations.Remove(ViewBag.Calculations[9]);
                 _db.SaveChanges();
             }
-
-
-
             return View();
         }
 

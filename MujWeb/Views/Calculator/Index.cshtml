@@ -6,7 +6,7 @@
 }
 @model Calculator
 
-
+<body>
 <div class="text-center container">
     <h1 class="display-4">Kalkulačka</h1>
 
@@ -90,3 +90,33 @@
        
     </div>
 </div>
+</body>
+
+<script>
+    // Save the scroll position before the page reloads
+    window.addEventListener("beforeunload", function () {
+      sessionStorage.setItem("scrollPosition", window.scrollY);
+    });
+</script>
+
+<style>
+  /* Hide the content initially */
+  body {
+    visibility: hidden;
+  }
+</style>
+
+<script>
+  // Restore the scroll position after the page reloads and then show the content
+  window.addEventListener("load", function () {
+    var scrollPosition = sessionStorage.getItem("scrollPosition");
+    if (scrollPosition !== null) {
+      window.scrollTo(0, parseInt(scrollPosition, 10));
+      sessionStorage.removeItem("scrollPosition");
+    }
+    // Show the content after restoring the scroll position
+    document.body.style.visibility = 'visible';
+  });
+</script>
+
+
