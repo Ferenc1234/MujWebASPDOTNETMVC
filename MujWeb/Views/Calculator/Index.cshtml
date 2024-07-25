@@ -60,30 +60,37 @@
     </form>
     <div class="table-responsive">
         <table class="p-3 mb-2 table table-bordered align-content-left">
-            @foreach (var item in calculations)
-            {
-                <tr>
-                    <td>@item.FirstNumber</td>
-                    <td>
-                        @if (item.Operation == 1)
-                        {
-                            <span>+</span>
-                        }
-                        else if (item.Operation == 2)
-                        {
-                            <span>-</span>
-                        }
-                        else if (item.Operation == 3)
-                        {
-                            <span>×</span>
-                        }
-                        else if (item.Operation == 4)
-                        {
-                            <span>÷</span>
-                        }
-                    </td>
+                @try
+                {
+                    foreach (var item in calculations)
+                    {
+                        <tr>
+                            <td>@item.FirstNumber</td>
+                            <td>
+                                @if (item.Operation == 1)
+                                {
+                                    <span>+</span>
+                                }
+                                else if (item.Operation == 2)
+                                {
+                                    <span>-</span>
+                                }
+                                else if (item.Operation == 3)
+                                {
+                                    <span>×</span>
+                                }
+                                else if (item.Operation == 4)
+                                {
+                                    <span>÷</span>
+                                }
+                            </td>
                     <td>@item.SecondNumber</td>
                     <td>@item.Result</td>
+                </tr>
+            }
+            } catch (Exception e) {
+                <tr>
+                    <td colspan="4" class="text-center text-danger">Chyba při načítání dat z databáze.</td>
                 </tr>
             }
         </table>

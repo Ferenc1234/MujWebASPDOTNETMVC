@@ -15,22 +15,29 @@ namespace MujWeb.Models
             get { return GetPropertyValue<int>("Id"); }
             set { SetPropertyValue("Id", value); }
         }
+        string? firstNumber;
+        public string? FirstNumber
+        {
+            get { return GetPropertyValue<string>("firstNumber"); }
+            set { SetPropertyValue("firstNumber", value); }
+        }
+        string? secondNumber;
+        public string? SecondNumber
+        {
+            get { return GetPropertyValue<string>("secondNumber"); }
+            set { SetPropertyValue("secondNumber", value); }
+        }
+        string? operation;
+        public int Operation
+        {
+            get { return GetPropertyValue<int>("operation"); }
+            set { SetPropertyValue("operation", value); }
+        }
+        string? result;
+        public double Result
+        {
+            get { return GetPropertyValue<double>("result"); }
+            set { SetPropertyValue("result", value); }
+        }
     }
 }
-
-//[Key]
-//[Required]
-//public int Id { get; set; }
-
-//[DisplayName("První číslo")]
-//[StringToDouble(ErrorMessage = "Zadejte prosím validní číslo")]
-//[Required(ErrorMessage = "Zadejte prosím hodnotu")]
-//public required string FirstNumber { get; set; }
-//[DisplayName("Druhé číslo")]
-//[StringToDouble(ErrorMessage = "Zadejte prosím validní číslo")]
-//[Required(ErrorMessage = "Zadejte prosím hodnotu")]
-//public required string SecondNumber { get; set; }
-//[DisplayName("Výsledek")]
-//public double Result { get; set; }
-//[Required(ErrorMessage = "Vyberte prosím operaci")]
-//public required int Operation { get; set; } // 1 = +, 2 = -, 3 = *, 4 = /
